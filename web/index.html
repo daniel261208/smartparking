@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Parking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Smart Parking 🚗</h1>
+
+    <h2>מערכת ניהול חניון חכם</h2>
+
+    <p>רכבים שנכנסו לחניון:</p>
+
+    <div>
+        <h2>מחשבון מחיר חניה</h2>
+
+        <label>כמה שעות הרכב חנה?</label>
+        <input type="number" id="hours" min="1">
+
+        <button onclick="calculatePrice()">חשב מחיר</button>
+
+        <p id="result"></p>
+    </div>
+
+    <div>
+        <h3>רכב מספר 1</h3>
+        <img src="http://localhost:8080/images/car1.jpg" width="300">
+    </div>
+
+    <div>
+        <h3>רכב מספר 2</h3>
+        <img src="http://localhost:8080/images/car2.jpg" width="300">
+    </div>
+
+    <script>
+        function calculatePrice() {
+
+            let hours = document.getElementById("hours").value;
+
+            if (hours == "") {
+                document.getElementById("result").innerHTML = "נא להזין מספר שעות";
+            }
+            else {
+                let price = Number(hours) * 10;
+
+                document.getElementById("result").innerHTML = "מחיר החניה הוא: " + price + " ש״ח";
+            }
+
+        }
+    </script>
+
+</body>
+</html>
